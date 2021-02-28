@@ -1,0 +1,24 @@
+{% extends "aboutsidebar.html" %}
+
+{% block batcontent %}
+
+
+        {% for p in page %}
+<meta name="author" content="Eric Buck">
+<meta name="title" content="{{ p.title }}">
+<meta name="description" content="{{ p.snippet }}">
+<meta name="keywords" content="{% for tag in p.tags %} {{tag}}, {% endfor %}">
+
+
+<div class="blogpage overflow-hidden">
+    <h2>{{ p.title }}</h2>
+            <p> Published {{ dateconvert(p.meta.date) }}</p>
+<hr>
+            {{ p.html|safe }}
+</div>
+        {% endfor %}
+
+
+{% endblock %}
+
+

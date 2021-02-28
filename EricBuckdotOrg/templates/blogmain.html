@@ -1,0 +1,36 @@
+{% extends "aboutsidebar.html" %}
+
+{% block batcontent %}
+ <!--<h1><small>A normal page yea</small></h1>-->
+    <div class="">
+        <h1>What's happening:</h1>
+    {% for p in pages %}
+        <hr>
+        <a href="{{ url_for("page", path=p.path) }}">
+            <h4 class="list-group-item-heading" style="cursor: pointer;">
+                {{ p.title }}
+            </h4>
+        </a>
+        <blockquote>
+            <p class="list-group-item-text">
+
+                {{ p.snippet }}
+
+            </p></blockquote>
+    {% if p.meta.tags|length %}
+        Tagged:
+        <a href="{{ url_for("tag", tag= p.meta.tags.0  ) }}">{{ p.meta.tags.0 }}</a>
+        {% for page_tag in p.meta.tags[1:] %}
+            <a href="{{ url_for("tag", tag=page_tag) }}">,&nbsp;{{ page_tag }}</a>
+        {% endfor %}
+        | Date Published:
+
+        {{ dateconvert(p.meta.date) }}
+    {% endif %}
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1><a href="{{ url_for("index") }}"></a></h1>
+
+    <div class="row">
+        <div class="media-left col-4">
+            <img class="mx-auto d-block media-object" src="{{url_for('static', filename = 'me.png')}}" style="width:auto; max-width: 30vw; padding-left:15px"/>
+        </div>
+    
+        <div class="media-body col-6" style="padding:10px;">
+            <h2>About me</h2>
+            <h4 class="media-heading" ></h4>
+            Hello! I'm Eric Buck, an Electrical Engineer living in Perth.
+            <br><br>
+            My main goal is to work towards a more sustainable society through technology.
+    <br><br>
+    
+    This website is for documenting my technical projects, as well as my personal blog where I will ramble about books, games, and whatever else is on my mind. To get in touch hit up my <a href="mailto:ebrianbuck@gmail.com" target="blank">email</a>!
+    Any code I write can be found on my <a href="http://github.com/ericbbuck" target="blank">Github</a>.
+    <br><br>
+    
+    <h2>Collaboration/Consulting</h2>
+    
+    If you've got a project that you think I'd find interesting to work on, please contact me at my email. I'm always happy to hear new ideas. 
+    
+    
+    <br/>
+    <hr/>
+    
+    <span class="contacticon center">
+        <a href="mailto:ebrianbuck@gmail.com"><i class="fa fa-envelope-square"></i></a>
+        <a href="https://github.com/ericbbuck" target="_blank"><i class="fab fa-github"></i></a>
+        <!--<a href="https://www.linkedin.com/in/andy-k-99976b92/" target="_blank"><i class="fab fa-linkedin"></i></a> -->
+        <a href="https://www.instagram.com/bucksuck" target = "_blank"><i class="fab fa-instagram"></i></a>
+    </span>
+    
+        </div>
+    </div>
+
+ 
+
+    {% endblock content %}
+
+
